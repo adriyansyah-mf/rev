@@ -1,1 +1,1 @@
-web: gunicorn --bind 0.0.0.0:$PORT reverse_dns:app
+web: gunicorn -w 4 -k uvicorn.workers.UvicornWorker reverse_dns:app
